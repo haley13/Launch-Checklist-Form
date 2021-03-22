@@ -1,5 +1,23 @@
 // Write your JavaScript code here!
 
+
+      <script>
+         window.addEventListener("load", function() {
+            }
+         let form = document.querySelector("form");
+            form.addEventListener("formSubmit", function(event) {
+               }
+               let pilotName = document.querySelector("input[name=pilotName]");
+               let copilotName = document.querySelector("input[name=copilotName]");
+               let fuelLevel = document.querySelector("input[name=fuelLevel]");
+               let cargoMass = document.querySelector("input[name=cargoMass]");
+               if ( isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
+                  } alert("Fuel Level and Cargo Mass must be a number!"); 
+               console.log(alert);
+               event.preventDefault();
+   
+      </script>
+
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
 <ol>
