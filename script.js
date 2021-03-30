@@ -1,22 +1,79 @@
 // Write your JavaScript code here!
-
-
-      <script>
-         window.addEventListener("load", function() {
-            }
-         let form = document.querySelector("form");
-            form.addEventListener("formSubmit", function(event) {
-               }
-               let pilotName = document.querySelector("input[name=pilotName]");
-               let copilotName = document.querySelector("input[name=copilotName]");
-               let fuelLevel = document.querySelector("input[name=fuelLevel]");
-               let cargoMass = document.querySelector("input[name=cargoMass]");
-               if ( isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
-                  } alert("Fuel Level and Cargo Mass must be a number!"); 
-               console.log(alert);
-               event.preventDefault();
+  function init () {
+  //const pilotName = document.getElementById("pilotName");
+  const launchStatus = document.getElementById("launchStatus");
+  const faultyItems=document.getElementById("faultyItems");
+  const fuelStatus = document.getElementById("fuelStatus");
+  
+  let button= document.getElementById("formSubmit");
+  button.addEventListener("click", function (event) { 
+      //alert("submit clicked");
+      
+      
+      let pilotName = document.querySelector("input[name=pilotName]");
+      let copilotName = document.querySelector("input[name=copilotName]");
+      let fuelLevel = document.querySelector("input[name=fuelLevel]");
+      let cargoMass = document.querySelector("input[name=cargoMass]");
+      
+      let input = document.getElementById("pilotStatus");
+              input.value = input.value +  `${pilotName}`;
+              console.log(input.value);
+      let input2 = document.getElementById("copilotStatus");
+              input2.value = input2.value +  `${copilotName}`;
+              console.log(input2.value);
+              
+    if (pilotName.value === "" || copilotName.value === "" || fuelLevel==="" || cargoMass==="") {
+      alert("All fields are required!");
+    }
+    if (isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
+       alert("Fuel Level and Cargo Mass must be a number!"); 
+    }
+  
+    //function update() {
+    let button= document.getElementById("formSubmit");
+    button.addEventListener("click", function (event) { 
+    //launchStatus.addEventListener("click", function() {
+    
+    if (fuelLevel.value < 10000) {
+      document.getElementById("launchStatus").style.color = "red";
+      faultyItems.style.visibility = "visible";
+      //alert("Fuel Level is too low!");
+    }
+  })
+  event.preventDefault();
+    })
+  }
+  
+  window.addEventListener("load", init);
+    
+     //aultyItems.addEventListener("click", function(event) { 
+      
    
-      </script>
+    
+     
+     
+      
+    
+  
+  
+ 
+    
+
+
+    
+  
+  
+  //     
+  //     // let input3=document.getElementById("launchStatus");
+  //     // console.log(input3.value);
+      
+  //   })
+  // }
+  
+
+    
+  
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
