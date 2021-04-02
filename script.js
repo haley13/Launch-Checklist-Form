@@ -20,18 +20,19 @@ function init () {
       input2.value = input2.value +  `${copilotName}`;
       console.log(input2.value);
               
-       if (pilotName.value === "" || copilotName.value === "" || fuelLevel==="" || cargoMass==="") {
+         if (pilotName.value === "" || copilotName.value === "" || fuelLevel==="" || cargoMass==="") {
          alert("All fields are required!");
-       }
+      
          if (isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
           alert("Fuel Level and Cargo Mass must be a number!"); 
          }
+        }
         
         //let launchStatus= document.getElementById("launchStatus");
         //launchStatus.addEventListener("click", function(event) {
         //let input3 = document.getElementById("launchStatus");
         //console.log(input3.value);
-        else if  (fuelLevel.value < 10000) {
+        if (fuelLevel.value < 10000) {
         faultyItems.style.visibility = "visible";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "red";
@@ -39,6 +40,8 @@ function init () {
         }
         else if (cargoMass.value > 10000) {
         faultyItems.style.visibility = "visible";
+        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.style.color = "red";
         cargoStatus.innerHTML = "There is too much mass for the shuttle to take off.";
          }
         else
