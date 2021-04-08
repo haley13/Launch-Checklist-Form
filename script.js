@@ -11,22 +11,14 @@ function init () {
       let copilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
       let cargoMass = document.querySelector("input[name=cargoMass]");
-      
-      let input = document.getElementById("pilotStatus");
-      pilotStatus.value = pilotStatus.value +  `${pilotName}`;
-      console.log(input.value);
-      let input2 = document.getElementById("copilotStatus");
-      input2.value = input2.value +  `${copilotName}`;
-      console.log(input2.value);
+    
               
-        if (pilotName.value === "" || copilotName.value === "" || fuelLevel==="" || cargoMass==="") {
-            alert("All fields are required!");
-      
-        if (isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
-           alert("Fuel Level and Cargo Mass must be a number!"); 
-         }
-        }
-        
+      if (pilotName.value === "" || copilotName.value === "" || fuelLevel==="" || cargoMass==="") {
+          alert("All fields are required!");
+             if (isNaN(fuelLevel.value) || isNaN(cargoMass.value )) {
+               alert("Fuel Level and Cargo Mass must be a number!"); 
+              }
+      }
       if (fuelLevel.value < 10000) {
            faultyItems.style.visibility = "visible";
            launchStatus.innerHTML = "Shuttle not ready for launch";
@@ -43,11 +35,11 @@ function init () {
                 launchStatus.innerHTML = "Shuttle is ready for launch.";
                 launchStatus.style.color = "green";
               }  
-      
+            
         event.preventDefault();
 })
 }
-
+  
 
 
   
